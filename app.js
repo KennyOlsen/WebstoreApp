@@ -16,6 +16,9 @@ var app = new Vue({
         toStorePage: function () {
             this.currentPage = 'store';
             this.getStoreData();
+        },
+        toCheckoutPage: function () {
+            this.currentPage = 'checkout';
         }
     }
 });
@@ -34,9 +37,28 @@ Vue.component('product', {
     template: `
     <div>
         <p>{{item.title}}</p>
-        <img v-bind:src='item.image' style="height: 100px; width: auto;">
+        <img v-bind:src='item.image' style="height: 70px; width: auto;">
 
-        <button v-on:click="addToCart()">Add to cart</button>
+        
+        <button v-on:click="addToCart()" style="margin-top: 5px;">Add to cart</button>
     </div>
     `
 });
+
+
+Vue.component('cart-item', {
+    props: [
+        'item',
+        'cart'
+    ],
+    methods: {},
+    template: `
+    <div>
+        <p>{{item.title}}</p>
+        <img v-bind:src='item.image' style="height: 70px; width: auto;">
+
+        
+        <button v-on:click="addToCart()" style="margin-top: 5px;">Add to cart</button>
+    </div>
+    `
+})

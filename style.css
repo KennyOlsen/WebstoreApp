@@ -23,7 +23,22 @@
     background-color: orange;
 }
 
+#store-page nav {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}
+
+#store-page nav button {
+    margin: 10px;
+}
+
 #store-page div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#store-page div div {
     height: 200px;
     width: 200px;
     border: 2px solid black;
@@ -32,9 +47,10 @@
     flex-direction: column;
     padding: 2%;
     background-color: white;
-    margin: 20px auto;
+    margin: 5px auto 20px auto;
 }
 
-#store-page div p {
+#store-page div div p {
     text-align: center;
+    margin: 3px;
 }

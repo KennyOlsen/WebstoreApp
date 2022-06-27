@@ -19,16 +19,21 @@
         <div id="store-page" v-else-if="currentPage == 'store'">
             
             <nav>
-                
+                <button v-on:click="toCheckoutPage()">Cart</button>
             </nav>
 
-            <product v-bind:item="product" v-bind:cart="shoppingCart" v-bind:key="index" v-for="(product, index) in storeList">
-            </product>
+            <div>
+                <product v-bind:item="product" v-bind:cart="shoppingCart" v-bind:key="index" v-for="(product, index) in storeList">
+                </product>
+            </div>
 
         </div>
 
         <div id="checkout-page" v-else=>
             
+            <cart-item v-bind:item="product" v-bind:cart="shoppingCart" v-bind:key="index" v-for="(product, index) in shoppingCart">
+
+            </cart-item>
         </div>
 
     </div>
