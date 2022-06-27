@@ -56,9 +56,6 @@ Vue.component('cart-item', {
     <div>
         <p>{{item.title}}</p>
         <img v-bind:src='item.image' style="height: 70px; width: auto;">
-
-        
-        <button v-on:click="addToCart()" style="margin-top: 5px;">Add to cart</button>
     </div>
     `
 })

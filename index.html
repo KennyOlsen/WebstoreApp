@@ -31,9 +31,11 @@
 
         <div id="checkout-page" v-else=>
             
-            <cart-item v-bind:item="product" v-bind:cart="shoppingCart" v-bind:key="index" v-for="(product, index) in shoppingCart">
-
-            </cart-item>
+            <div>
+                <cart-item v-bind:item="product" v-bind:cart="shoppingCart" v-bind:key="index" v-for="(product, index) in shoppingCart">
+                </cart-item>
+            </div>
+            
         </div>
 
     </div>

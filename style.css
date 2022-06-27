@@ -54,3 +54,32 @@
     text-align: center;
     margin: 3px;
 }
+
+#checkout-page {
+    grid-column: 2 / -2;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: orange;
+}
+
+#checkout-page div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#checkout-page div div {
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2%;
+    background-color: white;
+    margin: 5px auto 20px auto;
+}
+
+#checkout-page div div p {
+    text-align: center;
+    margin: 3px;
+}
