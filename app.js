@@ -14,16 +14,7 @@ var app = new Vue({
         },
         toStorePage: function () {
             this.currentPage = 'store';
+            getStoreData();
         }
     }
 });
-
-Vue.component('welcome-page', {
-    data: function () {
-        return {}
-    },
-    methods: {},
-    template: `
-
-    `
-})

@@ -1,3 +1,15 @@
-body {
-    background-color: black;
+#app {
+    display: flex;
+    justify-content: center;
+}
+
+#welcome-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#welcome-page button {
+    padding: 10px 3rem;
 }

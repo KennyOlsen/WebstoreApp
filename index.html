@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link ref='stylesheet' href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Webstore Application</title>
 </head>
 <body>
     <div id="app">
+        <div id="welcome-page" v-if="currentPage == 'welcome'">
 
+            <h1>Welcome</h1>
+            <button v-on:click="toStorePage()">Store</button>
+
+        </div>
+
+        <div id="store-page" v-else-if="currentPage == 'store'">
+            
+        </div>
+
+        <div id="checkout-page" v-else=>
+            
+        </div>
 
     </div>
 
