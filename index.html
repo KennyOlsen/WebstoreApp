@@ -22,7 +22,8 @@
                 
             </nav>
 
-            <product v-bind:item="product" v-bind:key="index" v-for="(product, index) in storeList"></product>
+            <product v-bind:item="product" v-bind:cart="shoppingCart" v-bind:key="index" v-for="(product, index) in storeList">
+            </product>
 
         </div>
 
