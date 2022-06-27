@@ -18,9 +18,11 @@
 
         <div id="store-page" v-else-if="currentPage == 'store'">
             
-            <nav></nav>
-            <product v-bind:item="product" v-bind:key="index" v-for="(product, index) in storeList"></product>
+            <nav>
+                
+            </nav>
 
+            <product v-bind:item="product" v-bind:key="index" v-for="(product, index) in storeList"></product>
 
         </div>
 

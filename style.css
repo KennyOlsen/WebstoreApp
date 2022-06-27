@@ -17,9 +17,10 @@
 }
 
 #store-page {
-    grid-column: 2 / -1;
+    grid-column: 2 / -2;
     display: flex;
     flex-wrap: wrap;
+    background-color: orange;
 }
 
 #store-page div {
@@ -30,4 +31,10 @@
     justify-content: center;
     flex-direction: column;
     padding: 2%;
+    background-color: white;
+    margin: 20px auto;
+}
+
+#store-page div p {
+    text-align: center;
 }
