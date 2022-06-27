@@ -26,8 +26,8 @@ Vue.component('product', {
     ],
     template: `
     <div>
-        <h3>{{item.title}}</h3>
-        <img v-bind:src='item.image'>
+        <p>{{item.title}}</p>
+        <img v-bind:src='item.image' style="height: 100px; width: auto;">
     </div>
     `
 });
