@@ -1,6 +1,7 @@
 #app {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto repeat(minmax(10px, 400px), 3) auto;
+    grid-template-rows: auto;
 }
 
 #welcome-page {
@@ -12,4 +13,8 @@
 
 #welcome-page button {
     padding: 10px 3rem;
+}
+
+#store-page {
+    grid-column: 2 / -1;
 }

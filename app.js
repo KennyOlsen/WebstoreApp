@@ -14,7 +14,20 @@ var app = new Vue({
         },
         toStorePage: function () {
             this.currentPage = 'store';
-            getStoreData();
+            this.getStoreData();
         }
     }
+});
+
+
+Vue.component('product', {
+    props: [
+        'item'
+    ],
+    template: `
+    <div>
+        <h3>{{item.title}}</h3>
+        <img v-bind:src='item.image'>
+    </div>
+    `
 });
