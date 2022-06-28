@@ -75,8 +75,9 @@
     margin: 10px 0 0 10px;
 }
 
-#checkout-page div .mainCheckoutDiv {
+#checkout-page div .checkoutItemDiv {
     display: flex;
+    align-items: center;
 }
 
 #checkout-page div div .test {
@@ -88,15 +89,19 @@
     align-items: center;
 }
 
-#checkout-page div div h5 {
+#checkout-page div div div h5 {
     margin: none;
 }
 
-#checkout-page div div p {
+#checkout-page div div div p {
     text-align: center;
     margin: 3px;
 }
 
-#checkout-page div div img {
+#checkout-page div div div img {
     aspect-ratio: 1 / 1;
+}
+
+#checkout-page div div button {
+    height: 30px;
 }

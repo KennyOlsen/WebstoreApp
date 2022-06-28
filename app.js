@@ -55,12 +55,19 @@ Vue.component('cart-item', {
     methods: {
         removeFromCart: function () {
             this.cart.splice(this.index, 1);
+        },
+        formatCost: function (price) {
+            price = price * 100;
+            price = price / 100;
+            console.log(price);
+            console.log("Editied: " + price)
+            return price
         }
     },
     template: `
-    <div class="mainCheckoutDiv">
+    <div class="checkoutItemDiv">
         <div class="test">
-            <h5>$ {{item.price}}</h5>
+            <h5>{{Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(item.price)}}</h5>
             <p>{{item.title}}</p>
             <img v-bind:src='item.image' style="height: 40px; width: auto;">
         </div>
