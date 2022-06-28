@@ -88,15 +88,16 @@ Vue.component('total-cost', {
     methods: {
         getProductCosts: function () {
             let total = 0;
-            console.log("Cart Recieved: " + this.cart);
             for (item in this.cart) {
-                total += item.price;
+                total += this.cart[item].price;
             };
-            return Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(total)
+            return total
         },
         getTax: function () {
+            console.log("Product Costs: " + this.getProductCosts());
             let tax = this.getProductCosts() * 0.08;
-            return tax
+            tax = Math.floor(tax * 100);
+            return tax / 100
         },
         getShipping: function () {
             let totalItems = 0;
@@ -104,7 +105,7 @@ Vue.component('total-cost', {
                 totalItems += 1;
             };
             let totalPrice = totalItems * 10;
-            return Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(totalPrice)
+            return totalPrice
         },
         getTotal: function () {
             let total = this.getProductCosts() + this.getTax() + this.getShipping();
@@ -113,9 +114,9 @@ Vue.component('total-cost', {
     },
     template: `
     <div>
-        <h4>Products: {{this.getProductCosts()}}</h4>
-        <h4>Tax: {{this.getTax()}}</h4>
-        <h4>Shipping: {{this.getShipping()}}  ($10.00 per item)</h4>
+        <h4>Products: {{Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(this.getProductCosts())}}</h4>
+        <h4>Tax: {{Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(this.getTax())}}</h4>
+        <h4>Shipping: {{Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(this.getShipping())}}  ($10.00 per item)</h4>
         <h3>Total: {{this.getTotal()}}</h3>
     </div>
     `
