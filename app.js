@@ -74,4 +74,49 @@ Vue.component('cart-item', {
         <button v-on:click="removeFromCart()">Remove</button>
     </div>
     `
+});
+
+
+Vue.component('total-cost', {
+    data: function () {
+        return {
+        }
+    },
+    props: [
+        'cart'
+    ],
+    methods: {
+        getProductCosts: function () {
+            let total = 0;
+            console.log("Cart Recieved: " + this.cart);
+            for (item in this.cart) {
+                total += item.price;
+            };
+            return Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(total)
+        },
+        getTax: function () {
+            let tax = this.getProductCosts() * 0.08;
+            return tax
+        },
+        getShipping: function () {
+            let totalItems = 0;
+            for (item in this.cart) {
+                totalItems += 1;
+            };
+            let totalPrice = totalItems * 10;
+            return Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(totalPrice)
+        },
+        getTotal: function () {
+            let total = this.getProductCosts() + this.getTax() + this.getShipping();
+            return Intl.NumberFormat('en-US', {style: "currency", currency: "USD"}).format(total)
+        }
+    },
+    template: `
+    <div>
+        <h4>Products: {{this.getProductCosts()}}</h4>
+        <h4>Tax: {{this.getTax()}}</h4>
+        <h4>Shipping: {{this.getShipping()}}  ($10.00 per item)</h4>
+        <h3>Total: {{this.getTotal()}}</h3>
+    </div>
+    `
 })

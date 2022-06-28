@@ -37,6 +37,8 @@
                 <cart-item v-bind:item="product" v-bind:cart="shoppingCart" v-bind:index="index" v-bind:key="index" v-for="(product, index) in shoppingCart"><br>
                 </cart-item>
             </div>
+
+            <total-cost v-bind:cart="shoppingCart" id="totalCosts"></total-cost>
             
         </div>
 
