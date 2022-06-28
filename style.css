@@ -39,7 +39,7 @@
 }
 
 #store-page div div {
-    height: 200px;
+    height: auto;
     width: 200px;
     border: 2px solid black;
     display: flex;
