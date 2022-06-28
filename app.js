@@ -49,14 +49,22 @@ Vue.component('product', {
 Vue.component('cart-item', {
     props: [
         'item',
-        'cart'
+        'cart',
+        'index'
     ],
-    methods: {},
+    methods: {
+        removeFromCart: function () {
+            this.cart.splice(this.index, 1);
+        }
+    },
     template: `
-    <div>
-        <h5>$ {{item.price}}</h5>
-        <p>{{item.title}}</p>
-        <img v-bind:src='item.image' style="height: 40px; width: auto;">
+    <div class="mainCheckoutDiv">
+        <div class="test">
+            <h5>$ {{item.price}}</h5>
+            <p>{{item.title}}</p>
+            <img v-bind:src='item.image' style="height: 40px; width: auto;">
+        </div>
+        <button v-on:click="removeFromCart()">Remove</button>
     </div>
     `
 })

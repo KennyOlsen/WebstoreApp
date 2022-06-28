@@ -30,9 +30,11 @@
         </div>
 
         <div id="checkout-page" v-else=>
+
+            <button v-on:click="toStorePage()">Back</button>
             
             <div>
-                <cart-item v-bind:item="product" v-bind:cart="shoppingCart" v-bind:key="index" v-for="(product, index) in shoppingCart"><br>
+                <cart-item v-bind:item="product" v-bind:cart="shoppingCart" v-bind:index="index" v-bind:key="index" v-for="(product, index) in shoppingCart"><br>
                 </cart-item>
             </div>
             
