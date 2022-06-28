@@ -54,8 +54,9 @@ Vue.component('cart-item', {
     methods: {},
     template: `
     <div>
+        <h5>$ {{item.price}}</h5>
         <p>{{item.title}}</p>
-        <img v-bind:src='item.image' style="height: 70px; width: auto;">
+        <img v-bind:src='item.image' style="height: 40px; width: auto;">
     </div>
     `
 })

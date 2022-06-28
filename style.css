@@ -57,29 +57,36 @@
 
 #checkout-page {
     grid-column: 2 / -2;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 3fr 30px 1fr;
     background-color: orange;
 }
 
 #checkout-page div {
-    display: flex;
-    flex-wrap: wrap;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: 10px 0 0 10px;
 }
 
 #checkout-page div div {
-    height: 200px;
-    width: 200px;
+    height: auto;
+    width: 100%;
     border: 2px solid black;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2%;
-    background-color: white;
-    margin: 5px auto 20px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#checkout-page div div h5 {
+    margin: none;
 }
 
 #checkout-page div div p {
     text-align: center;
     margin: 3px;
+}
+
+#checkout-page div div img {
+    aspect-ratio: 1 / 1;
 }
